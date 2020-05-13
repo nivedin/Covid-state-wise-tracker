@@ -1,24 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+
+import List from "./components/List/List";
+import List1 from "./components/List1/List1";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+
+
+  const [ states ,getState ] = useState([]);
+
+  useEffect(() => {
+     
+    fetchedData();
+
+  }, []);
+
+  const API = "https://api.covid19india.org/data.json";
+
+  const fetchedData = async () => {
+      const response = await fetch(API);
+      const data = await response.json();
+
+      getState(data.statewise);
+      
+  };
+
+  console.log(states);
+  let i=0;
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello</h1>
+      <h1>{states.lastupdatedtime}</h1>
+      <List1 state={states} key={i}/>
     </div>
   );
 }
