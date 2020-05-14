@@ -9,3 +9,12 @@
   text-align: center;
 }
 
+.heading{
+  background-color: #30475eee;
+  height: 10vh;
+}
+
+.header{
+  margin: 0;
+  color: rgb(236, 230, 230);
+}

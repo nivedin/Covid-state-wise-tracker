@@ -40,6 +40,9 @@ function App() {
   
   return (
     <div className="App">
+     <div className="heading">
+       <h1 className="header">Covid-19 Tracker</h1>
+     </div>
       <Cards data={global} key={global.i}/>
       <List state={states} key={states.states}/>
     </div>

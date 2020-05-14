@@ -5,15 +5,14 @@ import CountUp from "react-countup";
 import cx from "classnames";
 
 const Cards = ({data}) =>{
-    console.log(data);
     if(!(data.TotalConfirmed)){
         return "Loading...";
     }
     
     return(
         <div className={styles.container}>
-          <h3>Global Data</h3>
-            <Grid container spacing={3} jusify="center">
+          <h3 className={styles.heading}>Global</h3>
+            <Grid container spacing={3} justify={"center"} >
                 <Grid item component={Card} xs={12} md={3} className={cx(styles.card,styles.infected)}>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Infected</Typography>

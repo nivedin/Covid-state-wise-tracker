@@ -25,7 +25,7 @@ function List1({state}){
         </div> */}
            {/* <div className="dbutton">
             <button className={styles.darkBtn} onClick={darkMode} >Dark</button> */}
-            <h2>India Data</h2>
+            <h2 className={styles.heading}>India</h2>
             <Table striped bordered hover variant={click}>
             <thead>
                 <tr>
