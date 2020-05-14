@@ -1,0 +1,73 @@
+*{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+}
+.dbutton{
+   position: relative;
+}
+.darkBtn{
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    width: 100px;
+    border-radius: 10%;
+    background: white;
+}
+.heading{
+    background-color: #30475eee;
+    height: 10vh;
+}
+
+.header{
+    margin: 0;
+    color: rgb(236, 230, 230);
+}
+/* .number{
+    background: #f2a365;
+}
+.stateName{
+    background: #f2a365;
+}
+
+.confirm{
+    background: #f2a365;
+}
+.active{
+    background-color: #f2a365;
+
+}
+.recov{
+    background: #f2a365;
+}
+.death{
+    background: #f2a365;
+} */
+.stateNameText{
+    color: rgb(0, 195, 255);
+}
+
+.confirmText{
+    color: rgb(133, 133, 6);
+}
+.activeText{
+    color: rgb(189, 29, 1);
+
+}
+.recovText{
+    color: green;
+}
+
+.changConf{
+    font-size: 12px;
+    color: red;
+}
+
+.changRec{
+    font-size: 12px;
+    color: rgb(17, 184, 45);
+}
+
+.changDec{
+    font-size: 12px;
+    color: rgb(223, 57, 35);
+}

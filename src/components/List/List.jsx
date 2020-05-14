@@ -1,56 +1,66 @@
-import React  from "react";
-import Table from 'react-bootstrap/Table'
+import React,{ useState }   from "react";
+import Table from 'react-bootstrap/Table';
+
+import styles from "./List.module.css";
 
 
+function List1({state}){
 
+   const [click, setClick] = useState("dark")
 
-function List({key,name,active,confirmed,recovered,deaths,lastUpdate,changeConfirmed,changeDeaths,changeRecovered}){
-
+   function darkMode(){
+       if(click === ""){
+           setClick("dark");
+       }else{
+           setClick("");
+       }
+        
+    }
+    
+    
     return(
         <div>
-
-            <Table responsive bordered="1">
+        <div className={styles.heading}>
+             <h1 className={styles.header}>Covid-19 Tracker</h1>
+        </div>
+           <div className="dbutton">
+            <button className={styles.darkBtn} onClick={darkMode} >Dark</button>
+            <Table striped bordered hover variant={click}>
             <thead>
                 <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Confirmed</th>
-                <th>Active</th>
-                <th>Recovered</th>
-                <th>Deaths</th>
-                <th>ChangeConf</th>
+                <th className={styles.number}>#</th>
+                <th className={styles.stateName}>Name</th>
+                <th className={styles.confirm}>Confirmed</th>
+                <th className={styles.active}>Active</th>
+                <th className={styles.recov}>Recovered</th>
+                <th className={styles.death}>Deaths</th>
+                {/* <th>ChangeConf</th>
                 <th>ChangeRec</th>
-                <th>ChangeDea</th>
-                <th>Last Updated</th>
+                <th>ChangeDea</th> */}
+                {/* <th>Last Updated</th> */}
                 </tr>
             </thead>
             <tbody>
+            {state.map((state,i=1)=>(
                 <tr>
-                <td>{key}</td>
-                <td>{name}</td>
-                <td>{confirmed}</td>
-                <td>{active}</td>
-                <td>{recovered}</td>
-                <td>{deaths}</td>
-                <td>{lastUpdate}</td>
-                <td>{changeConfirmed}</td>
-                <td>{changeDeaths}</td>
-                <td>{changeRecovered}</td>
+                <td className={styles.numberText}>{i+1}</td>
+                <td className={styles.stateNameText}>{state.state}</td>
+                <td className={styles.confirmText}>{state.confirmed} <span className={styles.changConf}>+{state.deltaconfirmed}</span></td>
+                <td className={styles.activeText}>{state.active}</td>
+                <td className={styles.recovText}>{state.recovered} <span className={styles.changRec}>+{state.deltarecovered}</span></td>
+                <td className={styles.deathText}>{state.deaths} <span className={styles.changDec}>+{state.deltadeaths}</span></td>
+                {/* <td>+{state.deltaconfirmed}</td>
+                <td>+{state.deltarecovered}</td>
+                <td>+{state.deltadeaths}</td> */}
+                {/* <td>{state.lastupdatedtime}</td> */}
+                
                 </tr>
+            ))}
             </tbody>
             </Table>
-            {/* <h1>name:{name}</h1>
-            <h4>confirmed:{confirmed}</h4>
-            <h4>active:{active}</h4>
-            <h4>recovered:{recovered}</h4>
-            <h1>deaths:{deaths}</h1>
-            <h4>lastUpdate:{lastUpdate}</h4>
-            <h4>changeConfirmed:{changeConfirmed}</h4>
-            <h4>changeDeaths:{changeDeaths}</h4>
-            <h4>changeRecovered:{changeRecovered}</h4> */}
-            
+            </div>
         </div>
     );
 }
 
-export default List;
+export default List1;
