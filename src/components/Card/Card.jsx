@@ -12,7 +12,7 @@ const Cards = ({data}) =>{
     return(
         <div className={styles.container}>
           <h3 className={styles.heading}>Global</h3>
-            <Grid container spacing={3} justify={"center"} >
+            <Grid container  justify={"center"} >
                 <Grid item component={Card} xs={12} md={3} className={cx(styles.card,styles.infected)}>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Infected</Typography>
@@ -24,7 +24,6 @@ const Cards = ({data}) =>{
                                 separator=","
                             />
                         </Typography>
-                        {/* <Typography color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography> */}
                         <Typography variant="body2">Number of active cases of COVID-19</Typography>
                     </CardContent>
                 </Grid>
@@ -39,7 +38,6 @@ const Cards = ({data}) =>{
                                 separator=","
                             />
                         </Typography>
-                        {/* <Typography color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography> */}
                         <Typography variant="body2">Number of recoveries from COVID-19</Typography>
                     </CardContent>
                 </Grid>
@@ -54,7 +52,6 @@ const Cards = ({data}) =>{
                                 separator=","
                             />
                         </Typography>
-                        {/* <Typography color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography> */}
                         <Typography variant="body2">Number of death caused by COVID-19</Typography>
                     </CardContent>
                 </Grid>

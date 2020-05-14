@@ -21,6 +21,9 @@
     margin: 0;
     color: rgb(236, 230, 230);
 }
+Table{
+    margin:0 !important;
+}
 /* .number{
     background: #f2a365;
 }

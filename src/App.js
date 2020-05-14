@@ -36,8 +36,6 @@ function App() {
     getGlobal(gdata.Global);
   }
   
-  console.log(global);
-  
   return (
     <div className="App">
      <div className="heading">

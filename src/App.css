@@ -18,3 +18,20 @@
   margin: 0;
   color: rgb(236, 230, 230);
 }
+
+
+:root {
+  --shadow: #30475eee;
+  --scrollbarBG:rgb(255, 255, 255);
+  --thumbBG: #30475eee;
+}
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+   background: var(--scrollbarBG);
+}
+::-webkit-scrollbar-thumb {
+   background-color: var(--thumbBG);
+   box-shadow: 0 -100vh 0 100vh var(--shadow), 0 0 15px 5px black;
+}

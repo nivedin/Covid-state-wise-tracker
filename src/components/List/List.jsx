@@ -1,32 +1,15 @@
-import React,{ useState }   from "react";
+import React from "react";
 import Table from 'react-bootstrap/Table';
 
 import styles from "./List.module.css";
 
 
 function List1({state}){
-
-   const [click, setClick] = useState("dark")
-
-   function darkMode(){
-       if(click === ""){
-           setClick("dark");
-       }else{
-           setClick("");
-       }
-        
-    }
-    
     
     return(
         <div>
-        {/* <div className={styles.heading}>
-             <h1 className={styles.header}>Covid-19 Tracker</h1>
-        </div> */}
-           {/* <div className="dbutton">
-            <button className={styles.darkBtn} onClick={darkMode} >Dark</button> */}
             <h2 className={styles.heading}>India</h2>
-            <Table striped bordered hover variant={click}>
+            <Table striped bordered hover variant="dark" margin="none">
             <thead>
                 <tr>
                 <th className={styles.number}>#</th>
@@ -35,10 +18,6 @@ function List1({state}){
                 <th className={styles.active}>Active</th>
                 <th className={styles.recov}>Recovered</th>
                 <th className={styles.death}>Deaths</th>
-                {/* <th>ChangeConf</th>
-                <th>ChangeRec</th>
-                <th>ChangeDea</th> */}
-                {/* <th>Last Updated</th> */}
                 </tr>
             </thead>
             <tbody>
@@ -50,11 +29,6 @@ function List1({state}){
                 <td className={styles.activeText}>{state.active}</td>
                 <td className={styles.recovText}>{state.recovered} <span className={styles.changRec}>+{state.deltarecovered}</span></td>
                 <td className={styles.deathText}>{state.deaths} <span className={styles.changDec}>+{state.deltadeaths}</span></td>
-                {/* <td>+{state.deltaconfirmed}</td>
-                <td>+{state.deltarecovered}</td>
-                <td>+{state.deltadeaths}</td> */}
-                {/* <td>{state.lastupdatedtime}</td> */}
-                
                 </tr>
             ))}
             </tbody>
