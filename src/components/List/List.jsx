@@ -20,11 +20,12 @@ function List1({state}){
     
     return(
         <div>
-        <div className={styles.heading}>
+        {/* <div className={styles.heading}>
              <h1 className={styles.header}>Covid-19 Tracker</h1>
-        </div>
-           <div className="dbutton">
-            <button className={styles.darkBtn} onClick={darkMode} >Dark</button>
+        </div> */}
+           {/* <div className="dbutton">
+            <button className={styles.darkBtn} onClick={darkMode} >Dark</button> */}
+            <h2>India Data</h2>
             <Table striped bordered hover variant={click}>
             <thead>
                 <tr>
@@ -59,7 +60,6 @@ function List1({state}){
             </tbody>
             </Table>
             </div>
-        </div>
     );
 }
 
