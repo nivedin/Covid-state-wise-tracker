@@ -9,7 +9,7 @@ function List1({state}){
     return(
         <div>
             <h2 className={styles.heading}>India</h2>
-            <Table striped bordered hover variant="dark" margin="none">
+            <Table striped bordered hover variant="dark" responsive>
             <thead>
                 <tr>
                 <th className={styles.number}>#</th>
