@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import axios from 'axios';
 
 import List from "./components/List/List";
 import Cards from "./components/Card/Card";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -22,27 +25,26 @@ function App() {
   const GAPI = "https://api.covid19api.com/summary";
 
   const fetchedData = async () => {
-      const response = await fetch(API);
-      const data = await response.json();
-
+      const response = await axios.get(API);      
+      const data =  response.data;
       getState(data.statewise);
       
   };
 
   const fetchedGlobal = async () => {
-    const gresponse = await fetch(GAPI);
-    const gdata = await gresponse.json();
-
+    const gresponse = await axios.get(GAPI);    
+    const gdata = gresponse.data;
     getGlobal(gdata.Global);
   }
-  
+    
   return (
     <div className="App">
-     <div className="heading">
-       <h1 className="header">Covid-19 Tracker</h1>
-     </div>
+      <Navbar/>
+     <div>
       <Cards data={global} key={global.i}/>
-      <List state={states} key={states.states}/>
+      <List state={states} key={states.statecode}/>
+      </div>
+      <Footer/>
     </div>
   );
 }
