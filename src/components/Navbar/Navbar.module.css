@@ -2,7 +2,7 @@
 .navbar{
     display: flex;
     align-items: center;
-    height: 100%;
+    height: 8vh;
     background-color: darkblue;
     list-style: none;
     
@@ -47,6 +47,14 @@ span{
 .items a:active{
     color: rgb(161, 221, 255);
     text-decoration: none;
+}
 
-
+@media screen and (max-width:650px){
+    span{
+        flex: 0;
+    }
+    .title a{
+        margin-left: 15px;
+       font-size: 24px;
+    }
 }
