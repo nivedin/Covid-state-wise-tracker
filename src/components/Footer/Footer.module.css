@@ -1,18 +1,26 @@
 .footer{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     justify-items: center;
-    height: 7vh;
+    height: 100%;
     background-color: darkblue;
     color: white;
 }
-.footer a{
-    margin-top:17px;
-
+.sapne{
+    margin-top:10px;
+    font-size: 20px;
 }
+.name{
+    font-size:12px;
+}
+.icons a{
+    margin-right: 15px;
+}
+
 .footer a,
 .footer a:hover
 {
     text-decoration: none;
-    color: white;
+    color: rgb(255, 255, 255);
 }

@@ -25,9 +25,9 @@
 
 
 :root {
-  --shadow: #30475eee;
+  --shadow: rgba(65, 65, 65, 0.933);
   --scrollbarBG:rgb(255, 255, 255);
-  --thumbBG: #30475eee;
+  --thumbBG: darkblue;
 }
 ::-webkit-scrollbar {
   width: 9px;
